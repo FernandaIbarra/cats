@@ -1,0 +1,56 @@
+@charset "UTF-8";
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.img-cat {
+  width: 286px;
+  height: 374px;
+}
+
+.cards-row {
+  margin-top: 10px;
+}
+
+.cards-row .card-cat-container {
+  width: auto;
+}
+
+.heart-bttn {
+  display: inline-block;
+  position: relative;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.heart-bttn::before {
+  font-size: 3em;
+  color: #4e4c4c;
+  content: '♥';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.heart-bttn::after {
+  font-size: 3em;
+  color: #c40505;
+  content: '♥';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(0);
+          transform: translate(-50%, -50%) scale(0);
+  -webkit-transition: -webkit-transform 0.2s;
+  transition: -webkit-transform 0.2s;
+  transition: transform 0.2s;
+  transition: transform 0.2s, -webkit-transform 0.2s;
+}
+
+.heart-bttn.liked::after {
+  -webkit-transform: translate(-50%, -50%) scale(1.1);
+          transform: translate(-50%, -50%) scale(1.1);
+}
+/*# sourceMappingURL=style.css.map */

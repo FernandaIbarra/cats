@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+    <head>
+        <title>semana-4</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./assets/styles/style.css"/>
+    </head>
+    <body>
+        <!-- navbar -->
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="./home.html">Fernanda's Cats</a>
+            </div>
+        </nav> 
+        <div class="container">
+        <!-- form -->
+        <form>
+
+        </form>
+        <form class="mb-3">
+          <label for="postPhoto" class="form-label">Create your own post:</label>
+          <div>
+            <input type="file" class="form-control form-control-sm" accept="image/*" id="choose-file" name="choose-file" style="width: 95%; border-radius: 18px; margin-bottom: 20px;" />
+            <!-- <div id="img-preview"></div> -->
+          </div>
+          <input type="text" class="form-control" id="name" placeholder="Cat's Name" style="width: 95%; border-radius: 18px; margin-bottom: 20px;">
+          <input type="text" class="form-control" id="caption" placeholder="Caption" style="width: 95%; border-radius: 18px;">
+          <button type="button" class="btn btn-outline-info" onclick="addPost(event)" style="margin-top: 20px;">Create</button>
+        </form>
+        <!-- cards -->
+            <div class="row cards-row"> 
+              <!-- card created -->
+              <div id="cardCreated" class="col-sm-12 col-md-4 col-lg-3 card-cat-container" style="display: none;">
+                <div class="card mb-3" style="width: 288px; height: 550px;">
+                  <div id="img-preview"></div>  
+                      <div class="card-body">
+                      <h5 class="card-title" id="namePost"></h5>
+                      <p class="card-text" id="captionPost"></p>
+                      <div class="row g-0">
+                        <div class="col">
+                            <button class="heart-bttn" id="heartPostCreated" onclick="likesCounterNewCard()"></button>
+                        </div>
+                        <div class="col">
+                            <p class="card-text"><small class="text-muted" id="resulNewCard"></small></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div> 
+              <!-- card existing -->
+                <div class="col-sm-12 col-md-4 col-lg-3 card-cat-container">
+                    <div class="card mb-3" style="width: 288px;height: 550px;">
+                        <img src="./assets/img/UMA.png" class="card-img-top img-cat" alt="uma">
+                        <div class="card-body">
+                          <h5 class="card-title">Uma</h5>
+                          <p class="card-text">Uma is her human's shadow, she's the youngest and a forever baby.</p>
+                          <div class="row g-0">
+                            <div class="col">
+                                <button class="heart-bttn" id="heartOne" onclick="likesCounterUma()"></button>
+                            </div>
+                            <div class="col">
+                                <p class="card-text"><small class="text-muted" id="resultUma"></small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-3 card-cat-container">
+                    <div class="card mb-3" style="width: 288px; height: 550px;">
+                        <img src="./assets/img/ZELDA.png" class="card-img-top img-cat" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Zelda</h5>
+                          <p class="card-text">Zelda belives she's the queen and house, very demanding and loving if she feels like it.</p>
+                          <div class="row g-0">
+                            <div class="col">
+                                <button class="heart-bttn" id="heartTwo" onclick="likesCounterZelda()"></button>
+                            </div>
+                            <div class="col">
+                                <p class="card-text"><small class="text-muted" id="resultZelda"></small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-3 card-cat-container">
+                    <div class="card mb-3" style="width: 288px; height: 550px;">
+                        <img src="./assets/img/OLI.png" class="card-img-top img-cat" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Oli</h5>
+                          <p class="card-text">Oli is the most loving boy ever. He loves belly rubs and morning cuddles.</p>
+                          <div class="row g-0">
+                            <div class="col">
+                                <button class="heart-bttn" id="heartThree" onclick="likesCounterOli()"></button>
+                            </div>
+                            <div class="col">
+                                <p class="card-text"><small class="text-muted" id="resultOli"></small></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-3 card-cat-container">
+                    <div class="card mb-3" style="width: 288px; height: 550px;">
+                        <img src="./assets/img/SOL.png" class="card-img-top img-cat" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title">Sol</h5>
+                          <p class="card-text">Known as gordita, she's chunky, talks a lot, partially blind and super spoiled.</p>
+                          <div class="row g-0">
+                            <div class="col">
+                                <button class="heart-bttn" id="heartFour" onclick="likesCounterSol()"></button>
+                            </div>
+                            <div class="col">
+                                <p class="card-text"><small class="text-muted" id="resultSol"></small></p>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+        </div>
+    </body>
+    <script src="./assets/js/main.js"></script>
+
+</html>
